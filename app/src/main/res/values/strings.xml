@@ -13,4 +13,5 @@
     <string name="down">Down</string>
     <string name="ip_address">IP Address</string>
     <string name="connect">Connect</string>
+    <string name="manual">Manual</string>
 </resources>

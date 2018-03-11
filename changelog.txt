@@ -1,4 +1,10 @@
-1)  11-03-2018 23:51:04
+1)  11-03-2018 19:34:27
+    AUTHOR : UDIT
+    • Initial Commit
+    • Created login screen with IP Address field and background gradient
+    • Created Controller screen with camera feed and basic info and controls and a dynamic TextView
+
+2)  11-03-2018 23:51:04
     AUTHOR : AAMIN
     • Added changelog
     • Changed variable names slightly to make more sense
@@ -7,3 +13,10 @@
     • TextView in activity_mail : "iphead" id changed to "ipHead"
     • EditText in activity_mail : "ipaddr" id changed to "ipAddress"
                                 : added input type as numberDecimal
+
+3) 12-03-2018 00:30:12
+    AUTHOR : AAMIN
+    • EditText in activity_mail : removed input type as numberDecimal
+                                : added filter to not accept anything other than an IP
+    • Fixed camera issues with other devices
+    • Added initial manual mode text
