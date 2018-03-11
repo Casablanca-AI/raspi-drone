@@ -12,6 +12,10 @@ public class ControlActivity extends MainActivity {
     CameraView raspiCam;
     boolean defaultText = false;
 
+    //START @AUTHOR gem
+    boolean mode = false;
+    //STOP @AUTHOR gem
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,12 +31,14 @@ public class ControlActivity extends MainActivity {
         TimerTask setHeaderTask = new TimerTask() {
             @Override
             public void run() {
-                if (defaultText) {
+                if (defaultText && mode) {
                     header.animateText(" RasPi");
                     defaultText = false;
+                    mode = false;
                 } else {
                     header.animateText(" Drone");
                     defaultText = true;
+                    mode = true;
                 }
             }
         };

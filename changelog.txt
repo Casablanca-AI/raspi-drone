@@ -7,3 +7,10 @@
     • TextView in activity_mail : "iphead" id changed to "ipHead"
     • EditText in activity_mail : "ipaddr" id changed to "ipAddress"
                                 : added input type as numberDecimal
+
+2) 12-03-2018 00:30:12
+    AUTHOR : AAMIN
+    • EditText in activity_mail : removed input type as numberDecimal
+                                : added filter to not accept anything other than an IP
+    • Fixed camera issues with other devices
+    • Added initial manual mode text
