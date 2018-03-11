@@ -8,7 +8,7 @@
     AUTHOR : AAMIN
     • Added changelog
     • Changed variable names slightly to make more sense
-    • Connected layout xml's to string.xml
+    • Connected layout xmls to string.xml
     • Relative layout in activity_main : "backgr" id changed to "backgroundIP"
     • TextView in activity_mail : "iphead" id changed to "ipHead"
     • EditText in activity_mail : "ipaddr" id changed to "ipAddress"
@@ -20,3 +20,7 @@
                                 : added filter to not accept anything other than an IP
     • Fixed camera issues with other devices
     • Added initial manual mode text
+4) 12-03-2018 00:45:16
+       AUTHOR : Udit
+       • Added a loading dialog
+       • Made toast text sensible
