@@ -12,6 +12,10 @@ public class ControlActivity extends MainActivity {
     CameraView raspiCam;
     boolean defaultText = false;
 
+    //START @AUTHOR gem
+    boolean mode = false;
+    //STOP @AUTHOR gem
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
