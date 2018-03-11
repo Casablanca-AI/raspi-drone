@@ -1,0 +1,9 @@
+1)  11-03-2018 23:51:04
+    AUTHOR : AAMIN
+    • Added changelog
+    • Changed variable names slightly to make more sense
+    • Connected layout xml's to string.xml
+    • Relative layout in activity_main : "backgr" id changed to "backgroundIP"
+    • TextView in activity_mail : "iphead" id changed to "ipHead"
+    • EditText in activity_mail : "ipaddr" id changed to "ipAddress"
+                                : added input type as numberDecimal

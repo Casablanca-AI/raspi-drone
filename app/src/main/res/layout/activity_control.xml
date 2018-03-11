@@ -3,6 +3,7 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:padding="23sp">
@@ -12,74 +13,66 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="1sp"
             android:layout_height="wrap_content"
-            android:text="250m"
+            android:text="@string/_250m"
             android:layout_weight="1.0"
             android:textSize="23sp"
-            android:textAlignment="center"
-            />
+            android:textAlignment="center" />
 
         <TextView
             android:layout_width="1sp"
             android:layout_height="wrap_content"
-            android:text="6m/s"
+            android:text="@string/_6m_s"
             android:textSize="23sp"
             android:textAlignment="center"
-            android:layout_weight="1.0"
-            />
+            android:layout_weight="1.0" />
 
         <TextView
             android:layout_width="1sp"
             android:layout_height="wrap_content"
-            android:text="40° 26′"
+            android:text="@string/_40_26"
             android:layout_weight="1.0"
             android:textAlignment="center"
-            android:textSize="23sp"
-            />
+            android:textSize="23sp"/>
 
         <com.hanks.htextview.evaporate.EvaporateTextView
             android:id="@+id/main-head"
             android:layout_width="1sp"
             android:layout_height="wrap_content"
-            android:text="RasPi"
+            android:text="@string/raspi"
             android:textAlignment="center"
             android:layout_weight="1.0"
             android:textSize="40sp"
             android:textStyle="bold"
-            android:textColor="#FFFFFF"
-            />
+            android:textColor="#FFFFFF" />
 
         <TextView
             android:layout_width="1sp"
             android:layout_height="wrap_content"
             android:layout_weight="1.0"
             android:textAlignment="center"
-            android:text="24%"
-            android:textSize="23sp"
-            />
+            android:text="@string/_24"
+            android:textSize="23sp" />
 
         <TextView
             android:layout_width="1sp"
             android:layout_height="wrap_content"
-            android:text="Sunny"
+            android:text="@string/sunny"
             android:layout_weight="1.0"
             android:textAlignment="center"
-            android:textSize="23sp"
-            />
+            android:textSize="23sp" />
 
         <TextView
             android:layout_width="1sp"
             android:layout_height="wrap_content"
-            android:text="12.6ms"
+            android:text="@string/_12_6ms"
             android:layout_weight="1.0"
             android:textAlignment="center"
-            android:textSize="23sp"
-            />
+            android:textSize="23sp" />
     </LinearLayout>
 
     <RelativeLayout
@@ -97,13 +90,12 @@
             app:autoFocus="true"
             app:facing="back"
             app:flash="off"
-            app:aspectRatio="16:9"
-            />
+            app:aspectRatio="16:9" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Left"
+            android:text="@string/left"
             android:padding="5sp"
             android:layout_gravity="center"
             android:textColor="#000000"
@@ -113,13 +105,12 @@
             android:textSize="14sp"
             android:layout_marginEnd="8sp"
             android:textStyle="bold"
-            android:background="@drawable/control_buts"
-            />
+            android:background="@drawable/control_buts" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Right"
+            android:text="@string/right"
             android:padding="5sp"
             android:layout_gravity="center"
             android:textColor="#000000"
@@ -130,12 +121,12 @@
             android:textStyle="bold"
             android:background="@drawable/control_buts"
             android:layout_alignParentEnd="true"
-            />
+            tools:ignore="RelativeOverlap" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Up"
+            android:text="@string/up"
             android:padding="5sp"
             android:layout_gravity="center"
             android:textColor="#000000"
@@ -145,13 +136,12 @@
             android:layout_marginStart="8sp"
             android:textStyle="bold"
             android:layout_alignParentBottom="true"
-            android:background="@drawable/control_buts"
-            />
+            android:background="@drawable/control_buts" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Down"
+            android:text="@string/down"
             android:padding="5sp"
             android:layout_gravity="center"
             android:textColor="#000000"
@@ -163,7 +153,8 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
             android:background="@drawable/control_buts"
-            />
+            tools:ignore="RelativeOverlap" />
 
     </RelativeLayout>
+
 </RelativeLayout>

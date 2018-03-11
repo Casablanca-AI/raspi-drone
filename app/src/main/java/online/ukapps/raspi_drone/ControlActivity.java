@@ -9,15 +9,15 @@ import java.util.TimerTask;
 public class ControlActivity extends MainActivity {
 
     HTextView header;
-    CameraView raspicam;
-    boolean deftext = false;
+    CameraView raspiCam;
+    boolean defaultText = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_control);
         header = findViewById(R.id.main_head);
-        raspicam = findViewById(R.id.camera);
+        raspiCam = findViewById(R.id.camera);
 
         startUpdateText();
     }
@@ -27,12 +27,12 @@ public class ControlActivity extends MainActivity {
         TimerTask setHeaderTask = new TimerTask() {
             @Override
             public void run() {
-                if (deftext) {
+                if (defaultText) {
                     header.animateText(" RasPi");
-                    deftext = false;
+                    defaultText = false;
                 } else {
                     header.animateText(" Drone");
-                    deftext = true;
+                    defaultText = true;
                 }
             }
         };
@@ -43,12 +43,12 @@ public class ControlActivity extends MainActivity {
     @Override
     protected void onResume(){
         super.onResume();
-        raspicam.start();
+        raspiCam.start();
     }
 
     @Override
     protected void onPause(){
-        raspicam.stop();
+        raspiCam.stop();
         super.onPause();
     }
 }

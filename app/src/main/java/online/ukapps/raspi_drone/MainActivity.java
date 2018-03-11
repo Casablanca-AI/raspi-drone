@@ -25,10 +25,13 @@ public class MainActivity extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
-        EditText ip = findViewById(R.id.ipaddr);
-        Button conn = findViewById(R.id.connect);
-        TextView iphead = findViewById(R.id.iphead);
-        RelativeLayout bg = findViewById(R.id.backgr);
+        Button connect = findViewById(R.id.connect);
+        //EditText ip = findViewById(R.id.ipaddr);
+        //TextView ipHead = findViewById(R.id.iphead);
+        //RelativeLayout bg = findViewById(R.id.backgr);
+        EditText ip = findViewById(R.id.ipAddress);
+        TextView ipHead = findViewById(R.id.ipHead);
+        RelativeLayout bg = findViewById(R.id.backgroundIP);
 
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
@@ -41,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 .setTransitionDuration(3250)
                 .start();
 
-        conn.setOnClickListener(new View.OnClickListener() {
+        connect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, ControlActivity.class));
@@ -51,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         ip.setTypeface(Typeface.createFromAsset(getAssets(), "psb.ttf"));
-        conn.setTypeface(Typeface.createFromAsset(getAssets(), "psb.ttf"));
-        iphead.setTypeface(Typeface.createFromAsset(getAssets(), "psb.ttf"));
+        connect.setTypeface(Typeface.createFromAsset(getAssets(), "psb.ttf"));
+        ipHead.setTypeface(Typeface.createFromAsset(getAssets(), "psb.ttf"));
     }
 }
