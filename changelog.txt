@@ -20,7 +20,8 @@
                                 : added filter to not accept anything other than an IP
     • Fixed camera issues with other devices
     • Added initial manual mode text
-4) 12-03-2018 00:45:14
+    
+4) 12-03-2018 02:45:14
        AUTHOR : Udit
        • Added a loading dialog
        • Made toast text sensible
