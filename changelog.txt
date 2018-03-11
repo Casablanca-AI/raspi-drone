@@ -10,13 +10,13 @@
     • Changed variable names slightly to make more sense
     • Connected layout xmls to string.xml
     • Relative layout in activity_main : "backgr" id changed to "backgroundIP"
-    • TextView in activity_mail : "iphead" id changed to "ipHead"
-    • EditText in activity_mail : "ipaddr" id changed to "ipAddress"
+    • TextView in activity_main : "iphead" id changed to "ipHead"
+    • EditText in activity_main : "ipaddr" id changed to "ipAddress"
                                 : added input type as numberDecimal
 
 3) 12-03-2018 00:30:12
     AUTHOR : AAMIN
-    • EditText in activity_mail : removed input type as numberDecimal
+    • EditText in activity_main : removed input type as numberDecimal
                                 : added filter to not accept anything other than an IP
     • Fixed camera issues with other devices
     • Added initial manual mode text
