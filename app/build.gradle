@@ -31,6 +31,7 @@ dependencies {
     compile "com.hanks:htextview-base:0.1.2"
     compile "com.hanks:htextview-evaporate:0.1.2"
     compile "com.github.google:cameraview:-SNAPSHOT"
+    implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
 }
 repositories {
     mavenCentral()

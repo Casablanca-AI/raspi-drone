@@ -2,6 +2,7 @@ package online.ukapps.raspi_drone;
 
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputFilter;
@@ -15,6 +16,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.dynamitechetan.flowinggradient.FlowingGradientClass;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,9 +29,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button connect = findViewById(R.id.connect);
-        //EditText ip = findViewById(R.id.ipaddr);
-        //TextView ipHead = findViewById(R.id.iphead);
-        //RelativeLayout bg = findViewById(R.id.backgr);
         EditText ip = findViewById(R.id.ipAddress);
         TextView ipHead = findViewById(R.id.ipHead);
         RelativeLayout bg = findViewById(R.id.backgroundIP);
@@ -39,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         ip.getLayoutParams().width = dm.widthPixels - 220;
         ip.requestLayout();
 
-        //START @Author Gempario
+        //START @Author Gem
         InputFilter[] filters = new InputFilter[1];
         filters[0] = new InputFilter(
         ) {
@@ -68,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
         };
         ip.setFilters(filters);
-        //END @Author Gempario
+        //END @Author Gem
 
         new FlowingGradientClass()
                 .setBackgroundResource(R.drawable.animation_list)
@@ -79,9 +78,27 @@ public class MainActivity extends AppCompatActivity {
         connect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, ControlActivity.class));
-                Toast.makeText(MainActivity.this, "connection successfully failed!", Toast.LENGTH_SHORT).show();
-                finish();
+                final MaterialDialog goControls = new MaterialDialog.Builder(MainActivity.this)
+                        .title("Please Wait")
+                        .content("Connecting to your RasPi Drone")
+                        .progress(true, 0)
+                        .show();
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(MainActivity.this, "connection successful!", Toast.LENGTH_SHORT).show();
+                                goControls.dismiss();
+                                startActivity(new Intent(MainActivity.this, ControlActivity.class));
+                                finish();
+                            }
+                        });
+                    }
+                }, 4000);
+                //Temporary time gap to simulate connecting delay.
             }
         });
 
