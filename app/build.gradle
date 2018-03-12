@@ -33,6 +33,7 @@ dependencies {
     compile "com.github.google:cameraview:-SNAPSHOT"
     implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
     compile 'com.android.support:preference-v7:27.1.0'
+    compile 'com.andretietz.android:gamecontroller:1.1.1'
 }
 repositories {
     mavenCentral()

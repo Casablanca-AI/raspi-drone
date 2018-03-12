@@ -7,7 +7,6 @@
     <!-- START @AUTHOR gem -->
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
-
     <!-- END @AUTHOR gem -->
     <application
         android:allowBackup="true"
