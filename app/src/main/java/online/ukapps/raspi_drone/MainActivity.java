@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.text.InputFilter;
 import android.util.DisplayMetrics;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -97,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                Toast.makeText(MainActivity.this, "connection successful!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, "Connection successful!", Toast.LENGTH_SHORT).show();
                                 goControls.dismiss();
                                 startActivity(new Intent(MainActivity.this, ControlActivity.class));
                                 finish();
