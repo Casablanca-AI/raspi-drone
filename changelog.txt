@@ -14,3 +14,7 @@
                                 : added filter to not accept anything other than an IP
     • Fixed camera issues with other devices
     • Added initial manual mode text
+
+3) 12-03-2018 10:33:40
+    AUTHOR : AAMIN
+    • Added Settings class
