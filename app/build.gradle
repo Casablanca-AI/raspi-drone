@@ -32,6 +32,7 @@ dependencies {
     compile "com.hanks:htextview-evaporate:0.1.2"
     compile "com.github.google:cameraview:-SNAPSHOT"
     implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
+    compile 'com.android.support:preference-v7:27.1.0'
 }
 repositories {
     mavenCentral()

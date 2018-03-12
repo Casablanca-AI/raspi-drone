@@ -13,6 +13,7 @@ public class Settings extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+        setTitle("Settings");
 
         //START @AUTHOR gem
         final Switch mode = findViewById(R.id.switchMode);

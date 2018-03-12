@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <android.support.v7.preference.PreferenceCategory android:title="Basic Controls">
+
+        <android.support.v7.preference.SwitchPreferenceCompat
+            android:key="autopilotSetting"
+            android:title="Autopilot"
+            android:summary="Enable or disable manual constrols."
+            android:defaultValue="true" />
+
+        <android.support.v7.preference.ListPreference
+            android:key="altitudeSetting"
+            android:title="Altitude"
+            android:summary="Set the maximum drone altitude."
+            android:entries="@array/altitudes"
+            android:entryValues="@array/altitudes" />
+
+    </android.support.v7.preference.PreferenceCategory>
+
+</android.support.v7.preference.PreferenceScreen>
