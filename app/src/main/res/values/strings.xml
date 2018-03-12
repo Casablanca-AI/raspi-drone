@@ -14,4 +14,7 @@
     <string name="ip_address">IP Address</string>
     <string name="connect">Connect</string>
     <string name="manual">Manual</string>
+    <string name="mode">Mode</string>
+    <string name="autopilot">Autopilot</string>
+    <string name="maximum_altitude">Maximum Altitude</string>
 </resources>

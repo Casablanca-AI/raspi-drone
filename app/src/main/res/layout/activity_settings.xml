@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:padding="16dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="online.ukapps.raspi_drone.Settings">
+
+    <TextView
+        android:id="@+id/modeText"
+        android:textSize="16sp"
+        android:text="@string/mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="RelativeOverlap" />
+
+    <Switch
+        android:id="@+id/switchMode"
+        android:text="@string/manual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBaseline="@id/modeText"
+        tools:ignore="RelativeOverlap" />
+
+    <TextView
+        android:id="@+id/altitude"
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/modeText"
+        android:textSize="16sp"
+        android:text="@string/maximum_altitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Spinner
+        android:layout_below="@id/switchMode"
+        android:layout_marginTop="16dp"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/altitudeSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>
