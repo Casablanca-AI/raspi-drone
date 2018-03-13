@@ -22,4 +22,15 @@
 3) 12-03-2018 15:34:35
     AUTHOR : UDIT
    • Added MaterialSettings class
-   • Made MaterialSettings class accessible through long press on connect button 
+   • Made MaterialSettings class accessible through long press on connect button     
+   
+3) 13-03-2018 03:28:07
+    AUTHOR : UDIT
+   • Made the data on control screen dynamic through the accelerometer to make it look more 'geeky'
+   • Removed auto-focus from camera to increase stability
+   • Added a d-pad to the control activity instead of buttons
+   • Made the camera auto-focus by long pressing the header on control activity
+   • Made the camera full screen except for the top detail bar
+   
+   
+   
