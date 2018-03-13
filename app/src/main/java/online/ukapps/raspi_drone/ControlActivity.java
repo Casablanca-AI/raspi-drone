@@ -7,13 +7,11 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
-import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.cameraview.CameraView;
 import com.hanks.htextview.base.HTextView;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
