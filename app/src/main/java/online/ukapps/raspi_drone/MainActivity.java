@@ -103,8 +103,8 @@ public class MainActivity extends AppCompatActivity {
                             }
                         });
                     }
-                }, 4000);
-                //Temporary time gap to simulate connecting delay.
+                }, 1000);
+                //Temporary time gap to SIMULATE connecting delay.
             }
         });
 

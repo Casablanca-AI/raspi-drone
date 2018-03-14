@@ -19,12 +19,12 @@
     AUTHOR : AAMIN
     • Added Settings class
     
-3) 12-03-2018 15:34:35
+4) 12-03-2018 15:34:35
     AUTHOR : UDIT
    • Added MaterialSettings class
    • Made MaterialSettings class accessible through long press on connect button     
    
-3) 13-03-2018 03:28:07
+5) 13-03-2018 03:28:07
     AUTHOR : UDIT
    • Made the data on control screen dynamic through the accelerometer to make it look more 'geeky'
    • Removed auto-focus from camera to increase stability
@@ -32,5 +32,12 @@
    • Made the camera auto-focus by long pressing the header on control activity
    • Made the camera full screen except for the top detail bar
    
-   
-   
+6) 15-03-2018 01:43:38
+    AUTHOR : AAMIN
+   • Added mirror image of dPad
+   • Controlled lunatic behaviour of substring
+   • Added cool features in the dynamics of the HUD
+   • REDUCED PSUEDO LOGIN TIME
+   • Added onSwipeListener Java
+   • Added on swipe support for camera movement for camera
+   • Added bridge dependencies to gradle

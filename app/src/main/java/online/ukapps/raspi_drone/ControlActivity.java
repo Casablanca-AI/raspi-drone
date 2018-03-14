@@ -1,5 +1,6 @@
 package online.ukapps.raspi_drone;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -8,8 +9,8 @@ import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.google.android.cameraview.CameraView;
 import com.hanks.htextview.base.HTextView;
 
 import java.util.Timer;
@@ -18,7 +19,7 @@ import java.util.TimerTask;
 public class ControlActivity extends MainActivity implements SensorEventListener {
 
     HTextView header;
-    CameraView raspiCam;
+    CustomCameraView raspiCam;
     boolean defaultText = false;
     private TextView dynadata, dynadata2, dynadata3, dynadata4, dynadata5, dynadata6;
     boolean ready = true;
@@ -46,6 +47,21 @@ public class ControlActivity extends MainActivity implements SensorEventListener
             sensorManager.registerListener(this, accelerometer, 5, new Handler());
             startUpdateText();
         }
+
+        raspiCam.setOnTouchListener(new onSwipeTouchListener(this){
+            public void onSwipeTop(){
+                Toast.makeText(ControlActivity.this, "Swipe Up Detected", Toast.LENGTH_SHORT).show();
+            }
+            public void onSwipeRight(){
+                Toast.makeText(ControlActivity.this, "Swipe Right Detected", Toast.LENGTH_SHORT).show();
+            }
+            public void onSwipeLeft(){
+                Toast.makeText(ControlActivity.this, "Swipe Left Detected", Toast.LENGTH_SHORT).show();
+            }
+            public void onSwipeBottom(){
+                Toast.makeText(ControlActivity.this, "Swipe Bottom Detected", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
@@ -53,14 +69,15 @@ public class ControlActivity extends MainActivity implements SensorEventListener
         if (ready) {
             ready = false;
             new Handler().postDelayed(new Runnable() {
+                @SuppressLint("SetTextI18n")
                 @Override
                 public void run() {
-                    dynadata.setText(String.valueOf(event.values[1]).substring(0, 5));
-                    dynadata2.setText(String.valueOf(event.values[2]).substring(0, 5));
-                    dynadata3.setText(String.valueOf(event.values[1] * event.values[2]).substring(0, 5));
-                    dynadata4.setText(String.valueOf(event.values[1] * 2.214).substring(0, 5));
-                    dynadata5.setText(String.valueOf(event.values[2] * 2.214).substring(0, 5));
-                    dynadata6.setText(String.valueOf(event.values[1] + event.values[2] * event.values[1]).substring(0, 5));
+                    dynadata.setText(String.valueOf((event.values[1]) * 42).substring(0, 4) + "m");
+                    dynadata2.setText(String.valueOf(event.values[2]).substring(0, 4) + "m/s");
+                    dynadata3.setText(String.valueOf(event.values[1] * event.values[2]).substring(0, 4) + "°");
+                    dynadata4.setText(String.valueOf(event.values[1] * 2.214).substring(0, 4) + "°");
+                    dynadata5.setText(String.valueOf(event.values[2] * 2.214).substring(0, 4) + "ms");
+                    dynadata6.setText(String.valueOf(event.values[1] + event.values[2] * event.values[1]).substring(0, 4) + "m/s");
                     ready = true;
                 }
             }, 1580);
