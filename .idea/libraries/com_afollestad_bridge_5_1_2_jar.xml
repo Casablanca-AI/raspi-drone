@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="com.afollestad:bridge:5.1.2@jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.afollestad/bridge/5.1.2/1bf116293a57bbb332f27762c245370d893645ad/bridge-5.1.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.afollestad/bridge/5.1.2/81804e7433787942d90151aba12f78c0ed2f7435/bridge-5.1.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

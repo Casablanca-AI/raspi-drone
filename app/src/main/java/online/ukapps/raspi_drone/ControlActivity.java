@@ -6,15 +6,19 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.afollestad.bridge.Bridge;
+import com.afollestad.bridge.BridgeException;
 import com.hanks.htextview.base.HTextView;
 
 import java.util.Timer;
 import java.util.TimerTask;
+
+import es.dmoral.toasty.Toasty;
 
 public class ControlActivity extends MainActivity implements SensorEventListener {
 
@@ -25,6 +29,7 @@ public class ControlActivity extends MainActivity implements SensorEventListener
     boolean ready = true;
 
     //START @AUTHOR gem
+    String damn = "up";
     boolean mode = false;
     //STOP @AUTHOR gem
 
@@ -50,16 +55,24 @@ public class ControlActivity extends MainActivity implements SensorEventListener
 
         raspiCam.setOnTouchListener(new onSwipeTouchListener(this){
             public void onSwipeTop(){
-                Toast.makeText(ControlActivity.this, "Swipe Up Detected", Toast.LENGTH_SHORT).show();
+                damn="up";
+                new sendRequest().execute();
+                Toasty.success(ControlActivity.this, "Up").show();
             }
             public void onSwipeRight(){
-                Toast.makeText(ControlActivity.this, "Swipe Right Detected", Toast.LENGTH_SHORT).show();
+                damn="right";
+                new sendRequest().execute();
+                Toasty.success(ControlActivity.this, "Right").show();
             }
             public void onSwipeLeft(){
-                Toast.makeText(ControlActivity.this, "Swipe Left Detected", Toast.LENGTH_SHORT).show();
+                damn="left";
+                new sendRequest().execute();
+                Toasty.success(ControlActivity.this, "Left").show();
             }
             public void onSwipeBottom(){
-                Toast.makeText(ControlActivity.this, "Swipe Bottom Detected", Toast.LENGTH_SHORT).show();
+                damn="down";
+                new sendRequest().execute();
+                Toasty.success(ControlActivity.this, "Down").show();
             }
         });
     }
@@ -119,5 +132,18 @@ public class ControlActivity extends MainActivity implements SensorEventListener
     protected void onPause(){
         raspiCam.stop();
         super.onPause();
+    }
+
+    @SuppressLint("StaticFieldLeak")
+    private class sendRequest extends AsyncTask<Void, Void, Void>{
+        @Override
+        protected Void doInBackground(Void... voids) {
+            try {
+                Bridge.get("https://raspi-drone.ukapps.online/set-direction.php?dir=" + damn).request().response().asString();
+            } catch (BridgeException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
     }
 }

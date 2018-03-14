@@ -33,7 +33,7 @@
    • Made the camera full screen except for the top detail bar
    
 6) 15-03-2018 01:43:38
-    AUTHOR : AAMIN
+    AUTHOR : ROOT
    • Added mirror image of dPad
    • Controlled lunatic behaviour of substring
    • Added cool features in the dynamics of the HUD
@@ -41,3 +41,5 @@
    • Added onSwipeListener Java
    • Added on swipe support for camera movement for camera
    • Added bridge dependencies to gradle
+   • Added Toasty to gradle
+   • Successfully pinged server with camera movements
