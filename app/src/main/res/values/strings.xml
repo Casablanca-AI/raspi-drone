@@ -17,4 +17,5 @@
     <string name="mode">Mode</string>
     <string name="autopilot">Autopilot</string>
     <string name="maximum_altitude">Maximum Altitude</string>
+    <string name="no_touch">No touch</string>
 </resources>

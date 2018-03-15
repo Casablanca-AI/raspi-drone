@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button connect = findViewById(R.id.connect);
-        EditText ip = findViewById(R.id.ipAddress);
+        final EditText ip = findViewById(R.id.ipAddress);
         TextView ipHead = findViewById(R.id.ipHead);
         RelativeLayout bg = findViewById(R.id.backgroundIP);
 
@@ -98,7 +98,8 @@ public class MainActivity extends AppCompatActivity {
                             public void run() {
                                 Toast.makeText(MainActivity.this, "Connection successful!", Toast.LENGTH_SHORT).show();
                                 goControls.dismiss();
-                                startActivity(new Intent(MainActivity.this, ControlActivity.class));
+                                startActivity(new Intent(MainActivity.this, ControlActivity.class)
+                                .putExtra("IPAddress", ip.getText().toString()));
                                 finish();
                             }
                         });

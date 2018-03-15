@@ -31,7 +31,7 @@
    • Added a d-pad to the control activity instead of buttons
    • Made the camera auto-focus by long pressing the header on control activity
    • Made the camera full screen except for the top detail bar
-   
+
 6) 15-03-2018 01:43:38
     AUTHOR : ROOT
    • Added mirror image of dPad
