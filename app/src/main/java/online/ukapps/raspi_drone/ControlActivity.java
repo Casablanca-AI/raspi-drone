@@ -9,6 +9,7 @@ import android.hardware.SensorManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -37,6 +38,8 @@ public class ControlActivity extends MainActivity implements SensorEventListener
 
     //START @AUTHOR gem
     String damn = "up";
+    String dpadOutputCodeLeft = "UR";
+    String dpadOutputCodeRight = "UL";
     boolean mode = false;
     //STOP @AUTHOR gem
 
@@ -97,27 +100,43 @@ public class ControlActivity extends MainActivity implements SensorEventListener
                 switch (buttons&0xff){
                     case DirectionView.DIRECTION_DOWN:
                         dPadOutput.setText("LEFT -> Down");
+                        dpadOutputCodeLeft = "D";
+                        new sendAnotherRequest().execute();
                         break;
                     case DirectionView.DIRECTION_DOWN_LEFT:
                         dPadOutput.setText("LEFT -> Down_Left");
+                        dpadOutputCodeLeft = "DL";
+                        new sendAnotherRequest().execute();
                         break;
                     case DirectionView.DIRECTION_DOWN_RIGHT:
                         dPadOutput.setText("LEFT -> Down_Right");
+                        dpadOutputCodeLeft = "DR";
+                        new sendAnotherRequest().execute();
                         break;
                     case DirectionView.DIRECTION_UP:
                         dPadOutput.setText("LEFT -> Up");
+                        dpadOutputCodeLeft = "U";
+                        new sendAnotherRequest().execute();
                         break;
                     case DirectionView.DIRECTION_UP_LEFT:
                         dPadOutput.setText("LEFT -> Up_Left");
+                        dpadOutputCodeLeft = "UL";
+                        new sendAnotherRequest().execute();
                         break;
                     case DirectionView.DIRECTION_UP_RIGHT:
                         dPadOutput.setText("LEFT -> Up_Right");
+                        dpadOutputCodeLeft = "UR";
+                        new sendAnotherRequest().execute();
                         break;
                     case DirectionView.DIRECTION_LEFT:
                         dPadOutput.setText("LEFT -> Left");
+                        dpadOutputCodeLeft = "L";
+                        new sendAnotherRequest().execute();
                         break;
                     case DirectionView.DIRECTION_RIGHT:
                         dPadOutput.setText("LEFT -> Right");
+                        dpadOutputCodeLeft = "R";
+                        new sendAnotherRequest().execute();
                         break;
                     default:
                         dPadOutput.setText("");
@@ -132,34 +151,49 @@ public class ControlActivity extends MainActivity implements SensorEventListener
                 switch (buttons&0xff){
                     case DirectionView.DIRECTION_DOWN:
                         dPadOutputRight.setText("RIGHT -> Down");
+                        dpadOutputCodeRight = "D";
+                        new sendYetAnotherRequest().execute();
                         break;
                     case DirectionView.DIRECTION_DOWN_LEFT:
                         dPadOutputRight.setText("RIGHT -> Down_Left");
+                        dpadOutputCodeRight = "DL";
+                        new sendYetAnotherRequest().execute();
                         break;
                     case DirectionView.DIRECTION_DOWN_RIGHT:
                         dPadOutputRight.setText("RIGHT -> Down_Right");
+                        dpadOutputCodeRight = "DR";
+                        new sendYetAnotherRequest().execute();
                         break;
                     case DirectionView.DIRECTION_UP:
                         dPadOutputRight.setText("RIGHT -> Up");
+                        dpadOutputCodeRight = "U";
+                        new sendYetAnotherRequest().execute();
                         break;
                     case DirectionView.DIRECTION_UP_LEFT:
                         dPadOutputRight.setText("RIGHT -> Up_Left");
+                        dpadOutputCodeRight = "UL";
+                        new sendYetAnotherRequest().execute();
                         break;
                     case DirectionView.DIRECTION_UP_RIGHT:
                         dPadOutputRight.setText("RIGHT -> Up_Right");
+                        dpadOutputCodeRight = "UR";
+                        new sendYetAnotherRequest().execute();
                         break;
                     case DirectionView.DIRECTION_LEFT:
                         dPadOutputRight.setText("RIGHT -> Left");
+                        dpadOutputCodeRight = "L";
+                        new sendYetAnotherRequest().execute();
                         break;
                     case DirectionView.DIRECTION_RIGHT:
                         dPadOutputRight.setText("RIGHT -> Right");
+                        dpadOutputCodeRight = "R";
+                        new sendYetAnotherRequest().execute();
                         break;
                     default:
                         dPadOutputRight.setText("");
                 }
             }
         });
-
     }
 
     @Override
@@ -224,7 +258,35 @@ public class ControlActivity extends MainActivity implements SensorEventListener
         @Override
         protected Void doInBackground(Void... voids) {
             try {
-                Bridge.get("http://" + ipAddress + "/set-direction.php?dir=" + damn).request().response().asString();
+                Bridge.get("http://" + ipAddress + "/set-direction.php?val=" + damn).request().response().asString();
+            } catch (BridgeException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+    }
+
+    @SuppressLint("StaticFieldLeak")
+    private class sendAnotherRequest extends AsyncTask<Void, Void, Void>{
+        @Override
+        protected Void doInBackground(Void... voids) {
+            try {
+                Bridge.get("http://" + ipAddress + "/set-ldpad.php?val=" + dpadOutputCodeLeft).request().response().asString();
+                Log.d("lDPad", "http://" + ipAddress + "/set-ldpad.php?val=" + dpadOutputCodeLeft);
+            } catch (BridgeException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+    }
+
+    @SuppressLint("StaticFieldLeak")
+    private class sendYetAnotherRequest extends AsyncTask<Void, Void, Void>{
+        @Override
+        protected Void doInBackground(Void... voids) {
+            try {
+                Bridge.get("http://" + ipAddress + "/set-rdpad.php?val=" + dpadOutputCodeRight).request().response().asString();
+                Log.d("rDPad", "http://" + ipAddress + "/set-rdpad.php?val=" + dpadOutputCodeRight);
             } catch (BridgeException e) {
                 e.printStackTrace();
             }
